@@ -1,0 +1,18 @@
+//Function to open a picture in next free Picture Window with required Structure Tag and Window Title
+
+
+1.Create a main picture with necessary objects which calls this function.
+2.Name all Picture Windows with a common prefix,for eg., "PicWin", followed by number>0. 
+3.Set every PW Display property to 'No'
+4.Create Popup picture with Objects linked with desired Structure Tag elements.
+5.Create a Project Function with following code. This can be reused for different set of PWs by creating another Project function with different name and constants.
+
+//FUNCTION CALL
+//Params : Picture Name,TagPrefix,CaptionText
+OpenPopupinNextPW(lpszPictureName, "Motor1","MOTOR 1");
+
+
+//On Faceplate's close Button click event, call following functions
+SetVisible(GetParentPicture(lpszPictureName),GetParentPictureWindow(lpszPictureName),FALSE);
+SetTagPrefix(GetParentPicture(lpszPictureName),GetParentPictureWindow(lpszPictureName),"");
+ 
