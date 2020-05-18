@@ -9,7 +9,12 @@
 
 //FUNCTION CALL
 //Params : Picture Name,TagPrefix,CaptionText
-OpenPopupinNextPW(lpszPictureName, "Motor1","MOTOR 1");
+OpenPopupinNextPW( lpszPictureName,      //ParentPictureName
+                   "PicWin",             //Picture Window Name Prefix
+                   4,                    //Total Number of PWs
+                   "MotorControl.PDL",   //Popup Picture Name with.PDL ext
+                   "Motor1",             //Tag Prefix
+                   "MOTOR 1");           //Title
 
 
 //On Faceplate's close Button click event, call following functions
