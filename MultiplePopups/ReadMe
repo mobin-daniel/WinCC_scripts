@@ -1,17 +1,16 @@
 //Function to open a picture in next free Picture Window with required Structure Tag and Window Title
 
-
 1.Create a main picture with necessary objects which calls this function.
-2.Name all Picture Windows with a common prefix,for eg., "PicWin", followed by number>0. 
+2.Name all Picture Windows with a common prefix,say "PicWin", followed by number>0. eg. PicWin1, PicWin2 and so on. 
 3.Set every PW Display property to 'No'
-4.Create Popup picture with Objects linked with desired Structure Tag elements.
-5.Create a Project Function with following code. This can be reused for different set of PWs by creating another Project function with different name and constants.
+4.Create Popup pictures with Objects linked with desired Structure Tag elements.
+5.Create a Project Function 'OpenPopupinNextPW' as defined and call as below . 
 
 //FUNCTION CALL
 //Params : Picture Name,TagPrefix,CaptionText
 OpenPopupinNextPW( lpszPictureName,      //ParentPictureName
                    "PicWin",             //Picture Window Name Prefix
-                   4,                    //Total Number of PWs
+                    4,                    //Total Number of PWs
                    "MotorControl.PDL",   //Popup Picture Name with.PDL ext
                    "Motor1",             //Tag Prefix
                    "MOTOR 1");           //Title
