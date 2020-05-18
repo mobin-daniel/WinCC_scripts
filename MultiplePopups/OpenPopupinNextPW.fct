@@ -1,15 +1,6 @@
-void OpenPopupinNextPW( char* lpszPictureName, char* tPrefix, char* titlePW)
+void OpenPopupinNextPW( char* lpszPictureName, char* picWinPrefix,int MaxPWcount,char* PopupPicName, char* tPrefix, char* titlePW)
 {
-/*
-Define the first set of variables that define a set of Picture Windows. 
-This includes :
-1.Number of PWs used
-2.PictureWindow names' prefix used,
-3.Popup picture name.
-*/
-int MaxPWcount = 4;
-char picWinPrefix[20] = "PicWin";
-char picName[50] = "MotorControl.PDL";		//PopupPicture
+
 int freePWnum,i,newReq;
 
 char pwName[50] = "";
@@ -27,8 +18,8 @@ while(i<=MaxPWcount){					//Loop through each Visible Picture Windows to check i
 	i++;
 }
 
-if(newReq==1){						//If none of the open PW has the specified tag prefix,then find the first free PW.
-	for(i=1;i<=MaxPWcount;i++){				
+if(newReq==1){						//If none of the open PW has the specified tag prefix,then
+	for(i=1;i<=MaxPWcount;i++){			//find the first free Picture Window.
 		sprintf(pwName,"%s%d",picWinPrefix,i);		
 		if(GetVisible(lpszPictureName,pwName))
 			freePWnum = 0;
@@ -41,7 +32,7 @@ if(newReq==1){						//If none of the open PW has the specified tag prefix,then f
 	SetVisible(lpszPictureName,pwName,FALSE);
 	SetTagPrefix(lpszPictureName,pwName,tPrefix);
 	SetPropChar(lpszPictureName,pwName,"CaptionText",titlePW);	
-	SetPictureName(lpszPictureName,pwName,picName);
+	SetPictureName(lpszPictureName,pwName,PopupPicName);
 	SetVisible(lpszPictureName,pwName,TRUE);
  }
 }
