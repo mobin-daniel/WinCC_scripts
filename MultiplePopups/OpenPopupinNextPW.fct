@@ -27,12 +27,13 @@ if(newReq==1){						//If none of the open PW has the specified tag prefix,then
 			freePWnum = i;
 			break;
 		}
-	}
+	}if(freePWnum>0){
 	//Setting Faceplate Picture,TagPrefix in next free PictureWindow
 	SetVisible(lpszPictureName,pwName,FALSE);
 	SetTagPrefix(lpszPictureName,pwName,tPrefix);
 	SetPropChar(lpszPictureName,pwName,"CaptionText",titlePW);	
 	SetPictureName(lpszPictureName,pwName,PopupPicName);
 	SetVisible(lpszPictureName,pwName,TRUE);
+	}
  }
 }
